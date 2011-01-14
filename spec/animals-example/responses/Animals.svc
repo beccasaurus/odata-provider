@@ -1,0 +1,30 @@
+http://localhost:59671/Animals.svc/
+
+HTTP/1.1 200 OK
+Server: ASP.NET Development Server/10.0.0.0
+Date: Fri, 14 Jan 2011 22:57:47 GMT
+X-AspNet-Version: 4.0.30319
+DataServiceVersion: 1.0;
+Content-Length: 675
+Cache-Control: no-cache
+Content-Type: application/xml;charset=utf-8
+Connection: Close
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<service xml:base="http://localhost:59671/Animals.svc/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns="http://www.w3.org/2007/app">
+  <workspace>
+    <atom:title>Default</atom:title>
+    <collection href="Dogs">
+      <atom:title>Dogs</atom:title>
+    </collection>
+    <collection href="Breeds">
+      <atom:title>Breeds</atom:title>
+    </collection>
+    <collection href="Toys">
+      <atom:title>Toys</atom:title>
+    </collection>
+    <collection href="Manufacturers">
+      <atom:title>Manufacturers</atom:title>
+    </collection>
+  </workspace>
+</service>

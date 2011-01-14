@@ -1,0 +1,22 @@
+http://localhost:59671/Animals.svc/Toys(2)/Dogs
+
+HTTP/1.1 200 OK
+Server: ASP.NET Development Server/10.0.0.0
+Date: Fri, 14 Jan 2011 23:31:16 GMT
+X-AspNet-Version: 4.0.30319
+DataServiceVersion: 2.0;
+Content-Length: 517
+Cache-Control: no-cache
+Content-Type: application/atom+xml;charset=utf-8
+Connection: Close
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xml:base="http://localhost:59671/Animals.svc/" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">Dogs</title>
+  <id>http://localhost:59671/Animals.svc/Toys(2)/Dogs</id>
+  <updated>2011-01-14T23:31:16Z</updated>
+  <author>
+    <name />
+  </author>
+  <link rel="self" title="Dogs" href="Dogs" />
+</feed>

@@ -1,0 +1,103 @@
+http://localhost:59671/Animals.svc/$metadata
+
+HTTP/1.1 200 OK
+Server: ASP.NET Development Server/10.0.0.0
+Date: Fri, 14 Jan 2011 22:58:52 GMT
+X-AspNet-Version: 4.0.30319
+DataServiceVersion: 1.0;
+Content-Length: 5444
+Cache-Control: no-cache
+Content-Type: application/xml;charset=utf-8
+Connection: Close
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="AnimalsDataModel" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityType Name="Dog">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" />
+        <Property Name="BreedId" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Breed" Relationship="AnimalsDataModel.BreedDog" FromRole="Dog" ToRole="Breed" />
+        <NavigationProperty Name="Toys" Relationship="AnimalsDataModel.DogToy" FromRole="Dog" ToRole="Toy" />
+      </EntityType>
+      <EntityType Name="Breed">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" />
+        <NavigationProperty Name="Dogs" Relationship="AnimalsDataModel.BreedDog" FromRole="Breed" ToRole="Dog" />
+      </EntityType>
+      <EntityType Name="Toy">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" />
+        <Property Name="ManufacturerId" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Manufacturer" Relationship="AnimalsDataModel.ManufacturerToy" FromRole="Toy" ToRole="Manufacturer" />
+        <NavigationProperty Name="Dogs" Relationship="AnimalsDataModel.DogToy" FromRole="Toy" ToRole="Dog" />
+      </EntityType>
+      <EntityType Name="Manufacturer">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" />
+        <NavigationProperty Name="Toys" Relationship="AnimalsDataModel.ManufacturerToy" FromRole="Manufacturer" ToRole="Toy" />
+      </EntityType>
+      <Association Name="BreedDog">
+        <End Role="Breed" Type="AnimalsDataModel.Breed" Multiplicity="1" />
+        <End Role="Dog" Type="AnimalsDataModel.Dog" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="Breed">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="Dog">
+            <PropertyRef Name="BreedId" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="ManufacturerToy">
+        <End Role="Manufacturer" Type="AnimalsDataModel.Manufacturer" Multiplicity="1" />
+        <End Role="Toy" Type="AnimalsDataModel.Toy" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="Manufacturer">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="Toy">
+            <PropertyRef Name="ManufacturerId" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="DogToy">
+        <End Role="Dog" Type="AnimalsDataModel.Dog" Multiplicity="*" />
+        <End Role="Toy" Type="AnimalsDataModel.Toy" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="MvcApp" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityContainer Name="AnimalsDataModelContainer" p7:LazyLoadingEnabled="true" m:IsDefaultEntityContainer="true" xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntitySet Name="Dogs" EntityType="AnimalsDataModel.Dog" />
+        <EntitySet Name="Breeds" EntityType="AnimalsDataModel.Breed" />
+        <EntitySet Name="Toys" EntityType="AnimalsDataModel.Toy" />
+        <EntitySet Name="Manufacturers" EntityType="AnimalsDataModel.Manufacturer" />
+        <AssociationSet Name="BreedDog" Association="AnimalsDataModel.BreedDog">
+          <End Role="Breed" EntitySet="Breeds" />
+          <End Role="Dog" EntitySet="Dogs" />
+        </AssociationSet>
+        <AssociationSet Name="ManufacturerToy" Association="AnimalsDataModel.ManufacturerToy">
+          <End Role="Manufacturer" EntitySet="Manufacturers" />
+          <End Role="Toy" EntitySet="Toys" />
+        </AssociationSet>
+        <AssociationSet Name="DogToy" Association="AnimalsDataModel.DogToy">
+          <End Role="Dog" EntitySet="Dogs" />
+          <End Role="Toy" EntitySet="Toys" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
