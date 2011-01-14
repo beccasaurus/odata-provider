@@ -1,0 +1,13 @@
+#! /bin/bash
+
+URL=$1
+
+if [[ -z "$URL" ]]; then
+	echo "Usage: $0 \"http://www.google.com\" > responses/name-of-response"
+	exit
+fi
+
+RESPONSE=`curl -i "$URL"`
+TEXT="${URL}\n\n${RESPONSE}"
+
+echo -e "$TEXT"
