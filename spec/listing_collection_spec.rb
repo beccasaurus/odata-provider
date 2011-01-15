@@ -39,13 +39,13 @@ def saved_response filename
   SavedResponse.new filename
 end
 
-describe 'Listing Collection' do
-
-  it 'GET /Animals.svc/Dogs [application/atom+xml]' do
-    header 'Accept', 'application/atom+xml'
-    get '/Animals.svc/Dogs'
-
-    last_response.body.should == saved_response('Dogs.xml').body
-  end
-
-end
+# describe 'Listing Collection' do
+# 
+#   it 'GET /Animals.svc/Dogs [application/atom+xml]' do
+#     header 'Accept', 'application/atom+xml'
+#     get '/Animals.svc/Dogs'
+# 
+#     last_response.body.should == saved_response('Dogs.xml').body
+#   end
+# 
+# end
