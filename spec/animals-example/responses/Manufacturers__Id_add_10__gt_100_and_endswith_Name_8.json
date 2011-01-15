@@ -1,0 +1,819 @@
+http://localhost:59671/Animals.svc/Manufacturers?$filter=(Id%20add%2010)%20gt%20100%20and%20endswith(Name,'8')
+
+HTTP/1.1 200 OK
+Server: ASP.NET Development Server/10.0.0.0
+Date: Sat, 15 Jan 2011 00:51:42 GMT
+X-AspNet-Version: 4.0.30319
+DataServiceVersion: 2.0;
+Content-Length: 25733
+Cache-Control: no-cache
+Content-Type: application/json;charset=utf-8
+Connection: Close
+
+{
+"d" : {
+"results": [
+{
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(1)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 1, "Name": "Toy Squeakers Inc", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(1)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(2)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 2, "Name": "Dog Toys R Us", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(2)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(3)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 3, "Name": "Chewilicious", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(3)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(4)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 4, "Name": "Sports Authority", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(4)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(5)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 5, "Name": "1", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(5)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(6)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 6, "Name": "2", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(6)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(7)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 7, "Name": "3", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(7)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(8)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 8, "Name": "4", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(8)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(9)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 9, "Name": "5", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(9)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(10)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 10, "Name": "6", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(10)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(11)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 11, "Name": "7", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(11)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(12)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 12, "Name": "8", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(12)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(13)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 13, "Name": "9", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(13)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(14)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 14, "Name": "10", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(14)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(15)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 15, "Name": "11", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(15)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(16)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 16, "Name": "12", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(16)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(18)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 18, "Name": "13", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(18)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(19)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 19, "Name": "14", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(19)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(20)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 20, "Name": "15", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(20)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(21)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 21, "Name": "16", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(21)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(22)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 22, "Name": "17", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(22)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(23)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 23, "Name": "18", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(23)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(24)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 24, "Name": "19", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(24)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(25)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 25, "Name": "20", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(25)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(26)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 26, "Name": "21", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(26)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(27)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 27, "Name": "22", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(27)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(28)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 28, "Name": "23", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(28)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(29)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 29, "Name": "24", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(29)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(30)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 30, "Name": "25", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(30)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(31)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 31, "Name": "26", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(31)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(32)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 32, "Name": "27", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(32)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(33)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 33, "Name": "28", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(33)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(34)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 34, "Name": "29", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(34)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(35)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 35, "Name": "30", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(35)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(36)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 36, "Name": "31", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(36)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(37)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 37, "Name": "32", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(37)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(38)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 38, "Name": "33", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(38)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(39)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 39, "Name": "34", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(39)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(40)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 40, "Name": "35", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(40)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(41)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 41, "Name": "36", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(41)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(42)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 42, "Name": "37", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(42)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(43)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 43, "Name": "38", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(43)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(44)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 44, "Name": "39", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(44)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(45)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 45, "Name": "40", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(45)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(46)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 46, "Name": "41", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(46)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(47)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 47, "Name": "42", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(47)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(48)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 48, "Name": "43", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(48)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(49)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 49, "Name": "44", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(49)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(50)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 50, "Name": "45", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(50)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(51)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 51, "Name": "46", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(51)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(52)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 52, "Name": "47", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(52)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(53)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 53, "Name": "48", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(53)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(54)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 54, "Name": "49", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(54)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(55)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 55, "Name": "50", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(55)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(57)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 57, "Name": "51", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(57)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(58)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 58, "Name": "52", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(58)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(59)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 59, "Name": "53", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(59)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(60)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 60, "Name": "54", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(60)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(61)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 61, "Name": "55", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(61)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(62)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 62, "Name": "56", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(62)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(63)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 63, "Name": "57", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(63)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(64)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 64, "Name": "58", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(64)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(65)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 65, "Name": "59", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(65)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(66)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 66, "Name": "60", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(66)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(67)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 67, "Name": "61", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(67)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(68)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 68, "Name": "62", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(68)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(69)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 69, "Name": "63", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(69)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(70)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 70, "Name": "64", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(70)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(71)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 71, "Name": "65", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(71)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(72)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 72, "Name": "66", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(72)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(73)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 73, "Name": "67", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(73)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(74)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 74, "Name": "68", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(74)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(75)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 75, "Name": "69", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(75)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(76)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 76, "Name": "70", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(76)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(77)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 77, "Name": "71", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(77)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(78)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 78, "Name": "72", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(78)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(79)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 79, "Name": "73", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(79)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(80)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 80, "Name": "74", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(80)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(81)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 81, "Name": "75", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(81)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(82)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 82, "Name": "76", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(82)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(83)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 83, "Name": "77", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(83)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(84)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 84, "Name": "78", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(84)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(85)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 85, "Name": "79", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(85)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(86)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 86, "Name": "80", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(86)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(87)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 87, "Name": "81", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(87)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(88)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 88, "Name": "82", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(88)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(89)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 89, "Name": "83", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(89)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(90)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 90, "Name": "84", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(90)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(91)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 91, "Name": "85", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(91)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(92)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 92, "Name": "86", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(92)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(93)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 93, "Name": "87", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(93)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(94)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 94, "Name": "88", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(94)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(95)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 95, "Name": "89", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(95)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(96)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 96, "Name": "90", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(96)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(97)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 97, "Name": "91", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(97)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(98)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 98, "Name": "92", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(98)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(99)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 99, "Name": "93", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(99)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(100)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 100, "Name": "94", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(100)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(101)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 101, "Name": "95", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(101)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(102)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 102, "Name": "96", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(102)/Toys"
+}
+}
+}
+], "__next": "http://localhost:59671/Animals.svc/Manufacturers?$skiptoken=102"
+}
+}

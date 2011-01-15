@@ -1,0 +1,59 @@
+http://localhost:59671/Animals.svc/Breeds
+
+HTTP/1.1 200 OK
+Server: ASP.NET Development Server/10.0.0.0
+Date: Sat, 15 Jan 2011 00:51:37 GMT
+X-AspNet-Version: 4.0.30319
+DataServiceVersion: 2.0;
+Content-Length: 1268
+Cache-Control: no-cache
+Content-Type: application/json;charset=utf-8
+Connection: Close
+
+{
+"d" : {
+"results": [
+{
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Breeds(1)", "type": "AnimalsDataModel.Breed"
+}, "Id": 1, "Name": "Goldern Retriever", "Dogs": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Breeds(1)/Dogs"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Breeds(2)", "type": "AnimalsDataModel.Breed"
+}, "Id": 2, "Name": "Australian Shepherd", "Dogs": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Breeds(2)/Dogs"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Breeds(3)", "type": "AnimalsDataModel.Breed"
+}, "Id": 3, "Name": "American Pit Bull Terrier", "Dogs": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Breeds(3)/Dogs"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Breeds(4)", "type": "AnimalsDataModel.Breed"
+}, "Id": 4, "Name": "Labrador Retriever", "Dogs": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Breeds(4)/Dogs"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Breeds(5)", "type": "AnimalsDataModel.Breed"
+}, "Id": 5, "Name": "Beagle", "Dogs": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Breeds(5)/Dogs"
+}
+}
+}
+]
+}
+}

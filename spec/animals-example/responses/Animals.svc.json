@@ -1,0 +1,19 @@
+http://localhost:59671/Animals.svc/
+
+HTTP/1.1 200 OK
+Server: ASP.NET Development Server/10.0.0.0
+Date: Sat, 15 Jan 2011 00:51:25 GMT
+X-AspNet-Version: 4.0.30319
+DataServiceVersion: 1.0;
+Content-Length: 79
+Cache-Control: no-cache
+Content-Type: application/json;charset=utf-8
+Connection: Close
+
+{
+"d" : {
+"EntitySets": [
+"Dogs", "Breeds", "Toys", "Manufacturers"
+]
+}
+}

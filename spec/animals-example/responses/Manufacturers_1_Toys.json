@@ -1,0 +1,43 @@
+http://localhost:59671/Animals.svc/Manufacturers(1)/Toys
+
+HTTP/1.1 200 OK
+Server: ASP.NET Development Server/10.0.0.0
+Date: Sat, 15 Jan 2011 00:51:00 GMT
+X-AspNet-Version: 4.0.30319
+DataServiceVersion: 2.0;
+Content-Length: 758
+Cache-Control: no-cache
+Content-Type: application/json;charset=utf-8
+Connection: Close
+
+{
+"d" : {
+"results": [
+{
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Toys(1)", "type": "AnimalsDataModel.Toy"
+}, "Id": 1, "Name": "King Kong", "ManufacturerId": 1, "Manufacturer": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Toys(1)/Manufacturer"
+}
+}, "Dogs": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Toys(1)/Dogs"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Toys(4)", "type": "AnimalsDataModel.Toy"
+}, "Id": 4, "Name": "Small Kong", "ManufacturerId": 1, "Manufacturer": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Toys(4)/Manufacturer"
+}
+}, "Dogs": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Toys(4)/Dogs"
+}
+}
+}
+]
+}
+}

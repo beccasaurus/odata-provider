@@ -1,0 +1,17 @@
+#! /usr/bin/env ruby
+
+response_dir = File.join(File.dirname(__FILE__), 'responses/')
+
+Dir[File.join(response_dir, '*.xml')].each do |xml|
+  url            = File.read(xml).split("\n").first
+  xml_file       = File.basename xml
+  json_file      = xml_file.sub(/\.xml$/, '.json')
+  full_json_file = File.join response_dir, json_file
+
+  puts "\nRequesting #{url} ...\n"
+  json = `curl -i -H 'Accept: application/json' "#{url}"`
+  text = "#{url}\n\n#{json}"
+  File.open(full_json_file, 'w'){|f| f << text }
+end
+
+puts "Done"

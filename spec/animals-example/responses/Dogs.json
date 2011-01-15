@@ -1,0 +1,67 @@
+http://localhost:59671/Animals.svc/Dogs
+
+HTTP/1.1 200 OK
+Server: ASP.NET Development Server/10.0.0.0
+Date: Sat, 15 Jan 2011 00:51:11 GMT
+X-AspNet-Version: 4.0.30319
+DataServiceVersion: 2.0;
+Content-Length: 1386
+Cache-Control: no-cache
+Content-Type: application/json;charset=utf-8
+Connection: Close
+
+{
+"d" : {
+"results": [
+{
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Dogs(1)", "type": "AnimalsDataModel.Dog"
+}, "Id": 1, "Name": "Lander", "BreedId": 3, "Breed": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Dogs(1)/Breed"
+}
+}, "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Dogs(1)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Dogs(2)", "type": "AnimalsDataModel.Dog"
+}, "Id": 2, "Name": "Murdoch", "BreedId": 2, "Breed": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Dogs(2)/Breed"
+}
+}, "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Dogs(2)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Dogs(3)", "type": "AnimalsDataModel.Dog"
+}, "Id": 3, "Name": "Murphy", "BreedId": 1, "Breed": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Dogs(3)/Breed"
+}
+}, "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Dogs(3)/Toys"
+}
+}
+}, {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Dogs(4)", "type": "AnimalsDataModel.Dog"
+}, "Id": 4, "Name": "Snoopy", "BreedId": 5, "Breed": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Dogs(4)/Breed"
+}
+}, "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Dogs(4)/Toys"
+}
+}
+}
+]
+}
+}

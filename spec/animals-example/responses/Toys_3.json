@@ -1,0 +1,27 @@
+http://localhost:59671/Animals.svc/Toys(3)
+
+HTTP/1.1 200 OK
+Server: ASP.NET Development Server/10.0.0.0
+Date: Sat, 15 Jan 2011 00:50:55 GMT
+X-AspNet-Version: 4.0.30319
+DataServiceVersion: 1.0;
+Content-Length: 375
+Cache-Control: no-cache
+Content-Type: application/json;charset=utf-8
+Connection: Close
+
+{
+"d" : {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Toys(3)", "type": "AnimalsDataModel.Toy"
+}, "Id": 3, "Name": "Planet Earth", "ManufacturerId": 2, "Manufacturer": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Toys(3)/Manufacturer"
+}
+}, "Dogs": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Toys(3)/Dogs"
+}
+}
+}
+}

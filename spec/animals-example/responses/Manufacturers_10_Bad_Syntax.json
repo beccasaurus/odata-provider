@@ -1,0 +1,19 @@
+http://localhost:59671/Animals.svc/Manufacturers(10
+
+HTTP/1.1 400 Bad Request
+Server: ASP.NET Development Server/10.0.0.0
+Date: Sat, 15 Jan 2011 00:51:40 GMT
+X-AspNet-Version: 4.0.30319
+DataServiceVersion: 1.0;
+Content-Length: 114
+Cache-Control: private
+Content-Type: application/json
+Connection: Close
+
+{
+"error": {
+"code": "", "message": {
+"lang": "en-US", "value": "Bad Request - Error in query syntax."
+}
+}
+}

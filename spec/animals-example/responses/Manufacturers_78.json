@@ -1,0 +1,23 @@
+http://localhost:59671/Animals.svc/Manufacturers(78)
+
+HTTP/1.1 200 OK
+Server: ASP.NET Development Server/10.0.0.0
+Date: Sat, 15 Jan 2011 00:51:34 GMT
+X-AspNet-Version: 4.0.30319
+DataServiceVersion: 1.0;
+Content-Length: 266
+Cache-Control: no-cache
+Content-Type: application/json;charset=utf-8
+Connection: Close
+
+{
+"d" : {
+"__metadata": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(78)", "type": "AnimalsDataModel.Manufacturer"
+}, "Id": 78, "Name": "72", "Toys": {
+"__deferred": {
+"uri": "http://localhost:59671/Animals.svc/Manufacturers(78)/Toys"
+}
+}
+}
+}
