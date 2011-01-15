@@ -1,0 +1,79 @@
+http://localhost:59671/Animals.svc/Dogs?$select=Name
+
+HTTP/1.1 200 OK
+Server: ASP.NET Development Server/10.0.0.0
+Date: Sat, 15 Jan 2011 00:07:40 GMT
+X-AspNet-Version: 4.0.30319
+DataServiceVersion: 2.0;
+Content-Length: 2483
+Cache-Control: no-cache
+Content-Type: application/atom+xml;charset=utf-8
+Connection: Close
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xml:base="http://localhost:59671/Animals.svc/" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">Dogs</title>
+  <id>http://localhost:59671/Animals.svc/Dogs</id>
+  <updated>2011-01-15T00:07:40Z</updated>
+  <link rel="self" title="Dogs" href="Dogs" />
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Dogs(1)</id>
+    <title type="text"></title>
+    <updated>2011-01-15T00:07:40Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Dog" href="Dogs(1)" />
+    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Name>Lander</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Dogs(2)</id>
+    <title type="text"></title>
+    <updated>2011-01-15T00:07:40Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Dog" href="Dogs(2)" />
+    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Name>Murdoch</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Dogs(3)</id>
+    <title type="text"></title>
+    <updated>2011-01-15T00:07:40Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Dog" href="Dogs(3)" />
+    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Name>Murphy</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Dogs(4)</id>
+    <title type="text"></title>
+    <updated>2011-01-15T00:07:40Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Dog" href="Dogs(4)" />
+    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Name>Snoopy</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+</feed>

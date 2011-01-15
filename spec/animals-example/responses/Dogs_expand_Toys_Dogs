@@ -1,0 +1,410 @@
+http://localhost:59671/Animals.svc/Dogs?$expand=Toys/Dogs
+
+HTTP/1.1 200 OK
+Server: ASP.NET Development Server/10.0.0.0
+Date: Sat, 15 Jan 2011 00:03:20 GMT
+X-AspNet-Version: 4.0.30319
+DataServiceVersion: 2.0;
+Content-Length: 21514
+Cache-Control: no-cache
+Content-Type: application/atom+xml;charset=utf-8
+Connection: Close
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xml:base="http://localhost:59671/Animals.svc/" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">Dogs</title>
+  <id>http://localhost:59671/Animals.svc/Dogs</id>
+  <updated>2011-01-15T00:03:20Z</updated>
+  <link rel="self" title="Dogs" href="Dogs" />
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Dogs(1)</id>
+    <title type="text"></title>
+    <updated>2011-01-15T00:03:20Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Dog" href="Dogs(1)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Breed" type="application/atom+xml;type=entry" title="Breed" href="Dogs(1)/Breed" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Dogs(1)/Toys">
+      <m:inline>
+        <feed>
+          <title type="text">Toys</title>
+          <id>http://localhost:59671/Animals.svc/Dogs(1)/Toys</id>
+          <updated>2011-01-15T00:03:20Z</updated>
+          <link rel="self" title="Toys" href="Dogs(1)/Toys" />
+          <entry>
+            <id>http://localhost:59671/Animals.svc/Toys(1)</id>
+            <title type="text"></title>
+            <updated>2011-01-15T00:03:20Z</updated>
+            <author>
+              <name />
+            </author>
+            <link rel="edit" title="Toy" href="Toys(1)" />
+            <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Manufacturer" type="application/atom+xml;type=entry" title="Manufacturer" href="Toys(1)/Manufacturer" />
+            <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Dogs" type="application/atom+xml;type=feed" title="Dogs" href="Toys(1)/Dogs">
+              <m:inline>
+                <feed>
+                  <title type="text">Dogs</title>
+                  <id>http://localhost:59671/Animals.svc/Toys(1)/Dogs</id>
+                  <updated>2011-01-15T00:03:20Z</updated>
+                  <link rel="self" title="Dogs" href="Toys(1)/Dogs" />
+                  <entry>
+                    <id>http://localhost:59671/Animals.svc/Dogs(1)</id>
+                    <title type="text"></title>
+                    <updated>2011-01-15T00:03:20Z</updated>
+                    <author>
+                      <name />
+                    </author>
+                    <link rel="edit" title="Dog" href="Dogs(1)" />
+                    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Breed" type="application/atom+xml;type=entry" title="Breed" href="Dogs(1)/Breed" />
+                    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Dogs(1)/Toys" />
+                    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+                    <content type="application/xml">
+                      <m:properties>
+                        <d:Id m:type="Edm.Int32">1</d:Id>
+                        <d:Name>Lander</d:Name>
+                        <d:BreedId m:type="Edm.Int32">3</d:BreedId>
+                      </m:properties>
+                    </content>
+                  </entry>
+                </feed>
+              </m:inline>
+            </link>
+            <category term="AnimalsDataModel.Toy" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+            <content type="application/xml">
+              <m:properties>
+                <d:Id m:type="Edm.Int32">1</d:Id>
+                <d:Name>King Kong</d:Name>
+                <d:ManufacturerId m:type="Edm.Int32">1</d:ManufacturerId>
+              </m:properties>
+            </content>
+          </entry>
+          <entry>
+            <id>http://localhost:59671/Animals.svc/Toys(5)</id>
+            <title type="text"></title>
+            <updated>2011-01-15T00:03:20Z</updated>
+            <author>
+              <name />
+            </author>
+            <link rel="edit" title="Toy" href="Toys(5)" />
+            <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Manufacturer" type="application/atom+xml;type=entry" title="Manufacturer" href="Toys(5)/Manufacturer" />
+            <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Dogs" type="application/atom+xml;type=feed" title="Dogs" href="Toys(5)/Dogs">
+              <m:inline>
+                <feed>
+                  <title type="text">Dogs</title>
+                  <id>http://localhost:59671/Animals.svc/Toys(5)/Dogs</id>
+                  <updated>2011-01-15T00:03:20Z</updated>
+                  <link rel="self" title="Dogs" href="Toys(5)/Dogs" />
+                  <entry>
+                    <id>http://localhost:59671/Animals.svc/Dogs(1)</id>
+                    <title type="text"></title>
+                    <updated>2011-01-15T00:03:20Z</updated>
+                    <author>
+                      <name />
+                    </author>
+                    <link rel="edit" title="Dog" href="Dogs(1)" />
+                    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Breed" type="application/atom+xml;type=entry" title="Breed" href="Dogs(1)/Breed" />
+                    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Dogs(1)/Toys" />
+                    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+                    <content type="application/xml">
+                      <m:properties>
+                        <d:Id m:type="Edm.Int32">1</d:Id>
+                        <d:Name>Lander</d:Name>
+                        <d:BreedId m:type="Edm.Int32">3</d:BreedId>
+                      </m:properties>
+                    </content>
+                  </entry>
+                  <entry>
+                    <id>http://localhost:59671/Animals.svc/Dogs(2)</id>
+                    <title type="text"></title>
+                    <updated>2011-01-15T00:03:20Z</updated>
+                    <author>
+                      <name />
+                    </author>
+                    <link rel="edit" title="Dog" href="Dogs(2)" />
+                    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Breed" type="application/atom+xml;type=entry" title="Breed" href="Dogs(2)/Breed" />
+                    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Dogs(2)/Toys" />
+                    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+                    <content type="application/xml">
+                      <m:properties>
+                        <d:Id m:type="Edm.Int32">2</d:Id>
+                        <d:Name>Murdoch</d:Name>
+                        <d:BreedId m:type="Edm.Int32">2</d:BreedId>
+                      </m:properties>
+                    </content>
+                  </entry>
+                </feed>
+              </m:inline>
+            </link>
+            <category term="AnimalsDataModel.Toy" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+            <content type="application/xml">
+              <m:properties>
+                <d:Id m:type="Edm.Int32">5</d:Id>
+                <d:Name>Raquet Ball</d:Name>
+                <d:ManufacturerId m:type="Edm.Int32">4</d:ManufacturerId>
+              </m:properties>
+            </content>
+          </entry>
+        </feed>
+      </m:inline>
+    </link>
+    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">1</d:Id>
+        <d:Name>Lander</d:Name>
+        <d:BreedId m:type="Edm.Int32">3</d:BreedId>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Dogs(2)</id>
+    <title type="text"></title>
+    <updated>2011-01-15T00:03:20Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Dog" href="Dogs(2)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Breed" type="application/atom+xml;type=entry" title="Breed" href="Dogs(2)/Breed" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Dogs(2)/Toys">
+      <m:inline>
+        <feed>
+          <title type="text">Toys</title>
+          <id>http://localhost:59671/Animals.svc/Dogs(2)/Toys</id>
+          <updated>2011-01-15T00:03:20Z</updated>
+          <link rel="self" title="Toys" href="Dogs(2)/Toys" />
+          <entry>
+            <id>http://localhost:59671/Animals.svc/Toys(3)</id>
+            <title type="text"></title>
+            <updated>2011-01-15T00:03:20Z</updated>
+            <author>
+              <name />
+            </author>
+            <link rel="edit" title="Toy" href="Toys(3)" />
+            <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Manufacturer" type="application/atom+xml;type=entry" title="Manufacturer" href="Toys(3)/Manufacturer" />
+            <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Dogs" type="application/atom+xml;type=feed" title="Dogs" href="Toys(3)/Dogs">
+              <m:inline>
+                <feed>
+                  <title type="text">Dogs</title>
+                  <id>http://localhost:59671/Animals.svc/Toys(3)/Dogs</id>
+                  <updated>2011-01-15T00:03:20Z</updated>
+                  <link rel="self" title="Dogs" href="Toys(3)/Dogs" />
+                  <entry>
+                    <id>http://localhost:59671/Animals.svc/Dogs(2)</id>
+                    <title type="text"></title>
+                    <updated>2011-01-15T00:03:20Z</updated>
+                    <author>
+                      <name />
+                    </author>
+                    <link rel="edit" title="Dog" href="Dogs(2)" />
+                    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Breed" type="application/atom+xml;type=entry" title="Breed" href="Dogs(2)/Breed" />
+                    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Dogs(2)/Toys" />
+                    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+                    <content type="application/xml">
+                      <m:properties>
+                        <d:Id m:type="Edm.Int32">2</d:Id>
+                        <d:Name>Murdoch</d:Name>
+                        <d:BreedId m:type="Edm.Int32">2</d:BreedId>
+                      </m:properties>
+                    </content>
+                  </entry>
+                </feed>
+              </m:inline>
+            </link>
+            <category term="AnimalsDataModel.Toy" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+            <content type="application/xml">
+              <m:properties>
+                <d:Id m:type="Edm.Int32">3</d:Id>
+                <d:Name>Planet Earth</d:Name>
+                <d:ManufacturerId m:type="Edm.Int32">2</d:ManufacturerId>
+              </m:properties>
+            </content>
+          </entry>
+          <entry>
+            <id>http://localhost:59671/Animals.svc/Toys(4)</id>
+            <title type="text"></title>
+            <updated>2011-01-15T00:03:20Z</updated>
+            <author>
+              <name />
+            </author>
+            <link rel="edit" title="Toy" href="Toys(4)" />
+            <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Manufacturer" type="application/atom+xml;type=entry" title="Manufacturer" href="Toys(4)/Manufacturer" />
+            <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Dogs" type="application/atom+xml;type=feed" title="Dogs" href="Toys(4)/Dogs">
+              <m:inline>
+                <feed>
+                  <title type="text">Dogs</title>
+                  <id>http://localhost:59671/Animals.svc/Toys(4)/Dogs</id>
+                  <updated>2011-01-15T00:03:20Z</updated>
+                  <link rel="self" title="Dogs" href="Toys(4)/Dogs" />
+                  <entry>
+                    <id>http://localhost:59671/Animals.svc/Dogs(2)</id>
+                    <title type="text"></title>
+                    <updated>2011-01-15T00:03:20Z</updated>
+                    <author>
+                      <name />
+                    </author>
+                    <link rel="edit" title="Dog" href="Dogs(2)" />
+                    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Breed" type="application/atom+xml;type=entry" title="Breed" href="Dogs(2)/Breed" />
+                    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Dogs(2)/Toys" />
+                    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+                    <content type="application/xml">
+                      <m:properties>
+                        <d:Id m:type="Edm.Int32">2</d:Id>
+                        <d:Name>Murdoch</d:Name>
+                        <d:BreedId m:type="Edm.Int32">2</d:BreedId>
+                      </m:properties>
+                    </content>
+                  </entry>
+                </feed>
+              </m:inline>
+            </link>
+            <category term="AnimalsDataModel.Toy" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+            <content type="application/xml">
+              <m:properties>
+                <d:Id m:type="Edm.Int32">4</d:Id>
+                <d:Name>Small Kong</d:Name>
+                <d:ManufacturerId m:type="Edm.Int32">1</d:ManufacturerId>
+              </m:properties>
+            </content>
+          </entry>
+          <entry>
+            <id>http://localhost:59671/Animals.svc/Toys(5)</id>
+            <title type="text"></title>
+            <updated>2011-01-15T00:03:20Z</updated>
+            <author>
+              <name />
+            </author>
+            <link rel="edit" title="Toy" href="Toys(5)" />
+            <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Manufacturer" type="application/atom+xml;type=entry" title="Manufacturer" href="Toys(5)/Manufacturer" />
+            <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Dogs" type="application/atom+xml;type=feed" title="Dogs" href="Toys(5)/Dogs">
+              <m:inline>
+                <feed>
+                  <title type="text">Dogs</title>
+                  <id>http://localhost:59671/Animals.svc/Toys(5)/Dogs</id>
+                  <updated>2011-01-15T00:03:20Z</updated>
+                  <link rel="self" title="Dogs" href="Toys(5)/Dogs" />
+                  <entry>
+                    <id>http://localhost:59671/Animals.svc/Dogs(1)</id>
+                    <title type="text"></title>
+                    <updated>2011-01-15T00:03:20Z</updated>
+                    <author>
+                      <name />
+                    </author>
+                    <link rel="edit" title="Dog" href="Dogs(1)" />
+                    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Breed" type="application/atom+xml;type=entry" title="Breed" href="Dogs(1)/Breed" />
+                    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Dogs(1)/Toys" />
+                    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+                    <content type="application/xml">
+                      <m:properties>
+                        <d:Id m:type="Edm.Int32">1</d:Id>
+                        <d:Name>Lander</d:Name>
+                        <d:BreedId m:type="Edm.Int32">3</d:BreedId>
+                      </m:properties>
+                    </content>
+                  </entry>
+                  <entry>
+                    <id>http://localhost:59671/Animals.svc/Dogs(2)</id>
+                    <title type="text"></title>
+                    <updated>2011-01-15T00:03:20Z</updated>
+                    <author>
+                      <name />
+                    </author>
+                    <link rel="edit" title="Dog" href="Dogs(2)" />
+                    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Breed" type="application/atom+xml;type=entry" title="Breed" href="Dogs(2)/Breed" />
+                    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Dogs(2)/Toys" />
+                    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+                    <content type="application/xml">
+                      <m:properties>
+                        <d:Id m:type="Edm.Int32">2</d:Id>
+                        <d:Name>Murdoch</d:Name>
+                        <d:BreedId m:type="Edm.Int32">2</d:BreedId>
+                      </m:properties>
+                    </content>
+                  </entry>
+                </feed>
+              </m:inline>
+            </link>
+            <category term="AnimalsDataModel.Toy" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+            <content type="application/xml">
+              <m:properties>
+                <d:Id m:type="Edm.Int32">5</d:Id>
+                <d:Name>Raquet Ball</d:Name>
+                <d:ManufacturerId m:type="Edm.Int32">4</d:ManufacturerId>
+              </m:properties>
+            </content>
+          </entry>
+        </feed>
+      </m:inline>
+    </link>
+    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">2</d:Id>
+        <d:Name>Murdoch</d:Name>
+        <d:BreedId m:type="Edm.Int32">2</d:BreedId>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Dogs(3)</id>
+    <title type="text"></title>
+    <updated>2011-01-15T00:03:20Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Dog" href="Dogs(3)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Breed" type="application/atom+xml;type=entry" title="Breed" href="Dogs(3)/Breed" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Dogs(3)/Toys">
+      <m:inline>
+        <feed>
+          <title type="text">Toys</title>
+          <id>http://localhost:59671/Animals.svc/Dogs(3)/Toys</id>
+          <updated>2011-01-15T00:03:20Z</updated>
+          <author>
+            <name />
+          </author>
+          <link rel="self" title="Toys" href="Dogs(3)/Toys" />
+        </feed>
+      </m:inline>
+    </link>
+    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">3</d:Id>
+        <d:Name>Murphy</d:Name>
+        <d:BreedId m:type="Edm.Int32">1</d:BreedId>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Dogs(4)</id>
+    <title type="text"></title>
+    <updated>2011-01-15T00:03:20Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Dog" href="Dogs(4)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Breed" type="application/atom+xml;type=entry" title="Breed" href="Dogs(4)/Breed" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Dogs(4)/Toys">
+      <m:inline>
+        <feed>
+          <title type="text">Toys</title>
+          <id>http://localhost:59671/Animals.svc/Dogs(4)/Toys</id>
+          <updated>2011-01-15T00:03:20Z</updated>
+          <author>
+            <name />
+          </author>
+          <link rel="self" title="Toys" href="Dogs(4)/Toys" />
+        </feed>
+      </m:inline>
+    </link>
+    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">4</d:Id>
+        <d:Name>Snoopy</d:Name>
+        <d:BreedId m:type="Edm.Int32">5</d:BreedId>
+      </m:properties>
+    </content>
+  </entry>
+</feed>

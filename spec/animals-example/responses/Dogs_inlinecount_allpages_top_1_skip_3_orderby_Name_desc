@@ -1,0 +1,39 @@
+http://localhost:59671/Animals.svc/Dogs?$inlinecount=allpages&$top=1&$skip=3&$orderby=Name%20desc
+
+HTTP/1.1 200 OK
+Server: ASP.NET Development Server/10.0.0.0
+Date: Sat, 15 Jan 2011 00:18:29 GMT
+X-AspNet-Version: 4.0.30319
+DataServiceVersion: 2.0;
+Content-Length: 1413
+Cache-Control: no-cache
+Content-Type: application/atom+xml;charset=utf-8
+Connection: Close
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xml:base="http://localhost:59671/Animals.svc/" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">Dogs</title>
+  <id>http://localhost:59671/Animals.svc/Dogs</id>
+  <updated>2011-01-15T00:18:29Z</updated>
+  <link rel="self" title="Dogs" href="Dogs" />
+  <m:count>4</m:count>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Dogs(1)</id>
+    <title type="text"></title>
+    <updated>2011-01-15T00:18:29Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Dog" href="Dogs(1)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Breed" type="application/atom+xml;type=entry" title="Breed" href="Dogs(1)/Breed" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Dogs(1)/Toys" />
+    <category term="AnimalsDataModel.Dog" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">1</d:Id>
+        <d:Name>Lander</d:Name>
+        <d:BreedId m:type="Edm.Int32">3</d:BreedId>
+      </m:properties>
+    </content>
+  </entry>
+</feed>

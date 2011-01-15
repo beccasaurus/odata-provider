@@ -1,0 +1,308 @@
+http://localhost:59671/Animals.svc/Manufacturers?$filter=Id%20gt%20100
+
+HTTP/1.1 200 OK
+Server: ASP.NET Development Server/10.0.0.0
+Date: Fri, 14 Jan 2011 23:47:00 GMT
+X-AspNet-Version: 4.0.30319
+DataServiceVersion: 2.0;
+Content-Length: 13319
+Cache-Control: no-cache
+Content-Type: application/atom+xml;charset=utf-8
+Connection: Close
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xml:base="http://localhost:59671/Animals.svc/" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">Manufacturers</title>
+  <id>http://localhost:59671/Animals.svc/Manufacturers</id>
+  <updated>2011-01-14T23:47:00Z</updated>
+  <link rel="self" title="Manufacturers" href="Manufacturers" />
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(101)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(101)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(101)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">101</d:Id>
+        <d:Name>95</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(102)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(102)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(102)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">102</d:Id>
+        <d:Name>96</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(103)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(103)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(103)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">103</d:Id>
+        <d:Name>97</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(104)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(104)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(104)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">104</d:Id>
+        <d:Name>98</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(105)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(105)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(105)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">105</d:Id>
+        <d:Name>99</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(106)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(106)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(106)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">106</d:Id>
+        <d:Name>100</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(107)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(107)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(107)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">107</d:Id>
+        <d:Name>101</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(108)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(108)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(108)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">108</d:Id>
+        <d:Name>102</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(109)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(109)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(109)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">109</d:Id>
+        <d:Name>103</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(110)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(110)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(110)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">110</d:Id>
+        <d:Name>104</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(111)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(111)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(111)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">111</d:Id>
+        <d:Name>105</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(112)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(112)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(112)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">112</d:Id>
+        <d:Name>106</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(113)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(113)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(113)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">113</d:Id>
+        <d:Name>107</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(114)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(114)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(114)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">114</d:Id>
+        <d:Name>108</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(115)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(115)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(115)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">115</d:Id>
+        <d:Name>109</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(116)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(116)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(116)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">116</d:Id>
+        <d:Name>110</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+  <entry>
+    <id>http://localhost:59671/Animals.svc/Manufacturers(117)</id>
+    <title type="text"></title>
+    <updated>2011-01-14T23:47:00Z</updated>
+    <author>
+      <name />
+    </author>
+    <link rel="edit" title="Manufacturer" href="Manufacturers(117)" />
+    <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Toys" type="application/atom+xml;type=feed" title="Toys" href="Manufacturers(117)/Toys" />
+    <category term="AnimalsDataModel.Manufacturer" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/xml">
+      <m:properties>
+        <d:Id m:type="Edm.Int32">117</d:Id>
+        <d:Name>111</d:Name>
+      </m:properties>
+    </content>
+  </entry>
+</feed>
