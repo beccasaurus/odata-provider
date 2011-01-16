@@ -55,23 +55,23 @@ module OData
   end
 end
 
-class Dog < OData::EntityBase
+class Dog_EntityBase < OData::EntityBase
 end
 
-class Cat
+class Cat_EntityBase
   include OData::Entity
 end
 
 describe OData::EntityBase do
 
   it 'has #properties' do
-    Dog.properties.should be_empty
-    Dog.property :name, String
-    Dog.properties.should_not be_empty
-    Dog.properties.length.should == 1
-    Dog.properties.first.name.should == :name
-    Dog.properties.first.type.should == String
-    Dog.entry_type_name.should == "Dog"
+    Dog_EntityBase.properties.should be_empty
+    Dog_EntityBase.property :name, String
+    Dog_EntityBase.properties.should_not be_empty
+    Dog_EntityBase.properties.length.should == 1
+    Dog_EntityBase.properties.first.name.should == :name
+    Dog_EntityBase.properties.first.type.should == String
+    Dog_EntityBase.entry_type_name.should == "Dog_EntityBase"
   end
 
 end
@@ -79,13 +79,13 @@ end
 describe OData::Entity do
 
   it 'has #odata.properties' do
-    Cat.odata.properties.should be_empty
-    Cat.odata.property :foo, Fixnum
-    Cat.odata.properties.should_not be_empty
-    Cat.odata.properties.length.should == 1
-    Cat.odata.properties.first.name.should == :foo
-    Cat.odata.properties.first.type.should == Fixnum
-    Cat.odata.entry_type_name.should == "Cat"
+    Cat_EntityBase.odata.properties.should be_empty
+    Cat_EntityBase.odata.property :foo, Fixnum
+    Cat_EntityBase.odata.properties.should_not be_empty
+    Cat_EntityBase.odata.properties.length.should == 1
+    Cat_EntityBase.odata.properties.first.name.should == :foo
+    Cat_EntityBase.odata.properties.first.type.should == Fixnum
+    Cat_EntityBase.odata.entry_type_name.should == "Cat_EntityBase"
   end
 
 end
