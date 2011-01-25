@@ -2,6 +2,7 @@ require 'uri'
 require 'rubygems'
 require 'active_support/inflector'
 require 'rack'
+require 'nokogiri'
 
 module InitializedByAttributes
   def initialize options = nil
@@ -184,7 +185,8 @@ module OData
         def call env
           request  = ::Rack::Request.new env
           response = ::Rack::Response.new
-          entities = provider.execute env['REQUEST_URI'] # has path and query strings
+          query    = provider.build_query env['REQUEST_URI'] # has path and query strings
+          entities = provider.execute_query query
 
           case request.GET['format']
           when 'yaml'
@@ -201,7 +203,7 @@ module OData
             response.write ActiveSupport::JSON.encode(entities)
           else
             response.headers['Content-Type'] = 'application/xml'
-            response.write provider.xml_for entities
+            response.write provider.xml_for query, entities
           end
 
           response.finish
@@ -243,8 +245,41 @@ module OData
       execute_query build_query(query)
     end
 
-    def xml_for entities
-      '<!-- custom XML goes here -->'
+    def xml_for query, entities
+      entity      = entities.first
+      entity_type = query.entity_type
+
+      xml = Nokogiri::XML::Builder.new { |xml|
+        xml.entry 'xml:base' => 'http://localhost:59671/Animals.svc/', 
+                  'xmlns:d'  => 'http://schemas.microsoft.com/ado/2007/08/dataservices',
+                  'xmlns:m'  => 'http://schemas.microsoft.com/ado/2007/08/dataservices/metadata',
+                  'xmlns'    => 'http://www.w3.org/2005/Atom' do |entry|
+
+          entry.id_ "[root] #{query.uri.path}"
+          entry.title :type => 'text'
+          entry.updated 'xml date'
+          entry.author {|a| a.name }
+
+          # <link rel="edit" title="Breed" href="Breeds(1)" />
+          # <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Dogs" type="application/atom+xml;type=feed" title="Dogs" href="Breeds(1)/Dogs" />
+
+          entry.category :term => entity_type.name, :scheme => 'http://schemas.microsoft.com/ado/2007/08/dataservices/scheme'
+          # <content type="application/xml">
+
+          entry.content(:type => 'application/xml'){ |content|
+            content.send('m:properties'){ |properties|
+              entity_type.properties.each do |property|
+                properties.send("d:#{property.name}", entity.send(property.name).to_s)
+              end
+            }
+          }
+
+          # <m:properties>
+          #   <d:Id m:type="Edm.Int32">1</d:Id>
+          #   <d:Name>Goldern Retriever</d:Name>
+
+        end
+      }.to_xml.sub('<?xml version="1.0"?>', '<?xml version="1.0" encoding="utf-8" standalone="yes"?>')
     end
 
   private
