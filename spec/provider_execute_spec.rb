@@ -9,10 +9,20 @@ class Dog < OData::EntityType
   attr_property :id,   String
   attr_property :name, String
 
+  executor OData::RubyQueryExecutor.new { Dog.all_dogs }
+  #executor :ruby, lambda { Dog.all_dogs } # using shorthand for registered executors
+  #executor :ruby # using conventions
+
   # assumes *1* key for now ...
   def self.get key
     $dogs.detect {|dog| dog.send(keys.first.name).to_s == key.to_s }
   end
+
+  # our little repository of dogs, for testing
+  class << self
+    attr_accessor :all_dogs
+  end
+  @all_dogs ||= []
 end
 
 describe OData::Provider, '#execute' do
@@ -61,4 +71,55 @@ describe OData::Provider, '#make_query' do
     skip_option.value.should == '5'
   end
 
+end
+
+describe OData::Provider, '#execute_query' do
+
+  before do
+    @provider = OData::Provider.new Dog
+    Dog.all_dogs = [
+      Dog.new(:id => 1, :name => 'Rover'),
+      Dog.new(:id => 2, :name => 'Lander'),
+      Dog.new(:id => 3, :name => 'Murdoch'),
+      Dog.new(:id => 4, :name => 'Spot'),
+      Dog.new(:id => 5, :name => 'Rex')
+    ]
+  end
+
+  it '/Dogs' do
+    dogs = @provider.execute_query @provider.build_query('/Dogs')
+    dogs.length.should == 5
+  end
+
+  it '/Dogs(3)' do
+    dogs = @provider.execute_query @provider.build_query('/Dogs(3)')
+    dogs.length.should == 1
+    dogs.first.id.should == 3
+    dogs.first.name.should == 'Murdoch'
+  end
+
+  it '/Dogs?$top=2' do
+    dogs = @provider.execute_query @provider.build_query('/Dogs?$top=2')
+    dogs.length.should == 2
+    dogs.first.id.should == 1
+    dogs.first.name.should == 'Rover'
+    dogs.last.id.should == 2
+    dogs.last.name.should == 'Lander'
+  end
+
+  it '/Dogs?$top=2$skip=4' do
+    dogs = @provider.execute_query @provider.build_query('/Dogs?$top=2&$skip=4')
+    dogs.length.should == 1
+    dogs.first.id.should == 5
+    dogs.first.name.should == 'Rex'
+  end
+
+  it '/Dogs?$top=2$skip=3' do
+    dogs = @provider.execute_query @provider.build_query('/Dogs?$top=2&$skip=3')
+    dogs.length.should == 2
+    dogs.first.id.should == 4
+    dogs.first.name.should == 'Spot'
+    dogs.last.id.should == 5
+    dogs.last.name.should == 'Rex'
+  end
 end
