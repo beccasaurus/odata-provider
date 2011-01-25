@@ -165,28 +165,12 @@ module OData
       query
     end
 
-    # hmm ... this is VERY dependent upon the 'adapter' we use ... hmm ... delegate to the EntityType, which can do whatever it wants?
     def execute_query query
       query.entity_type.query_executor.execute_query query
     end
 
-    # TODO this should use build_query and execute_query, when those methods are complete.  this logic will go away!
     def execute query
-      query = query.strip
-      query = query.sub('/', '') if query.start_with?('/')
-      uri   = URI.parse query
-      query = uri.path
-
-      if query =~ /^(\w+)\(([^\)]+)\)/
-        plural_entity_type_name, key = $1, $2
-        if entity_type = entity_types.detect {|type| type.name == plural_entity_type_name.singularize }
-          entity_type.get key
-        else
-          "Entity type not found: #{plural_entity_type_name.singularize.inspect}"
-        end
-      else
-        "Query does not have a key: #{query}"
-      end
+      execute_query build_query(query)
     end
 
   private

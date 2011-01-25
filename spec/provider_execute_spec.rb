@@ -32,7 +32,55 @@ end
 
 describe OData::Provider, '#execute' do
 
+  before do
+    @provider = OData::Provider.new Dog
+    Dog.all_dogs = [
+      Dog.new(:id => 1, :name => 'Rover'),
+      Dog.new(:id => 2, :name => 'Lander'),
+      Dog.new(:id => 3, :name => 'Murdoch'),
+      Dog.new(:id => 4, :name => 'Spot'),
+      Dog.new(:id => 5, :name => 'Rex')
+    ]
+  end
+
   it 'raises exception is #entity_types does not include the type'
+
+  it '/Dogs' do
+    dogs = @provider.execute('/Dogs')
+    dogs.length.should == 5
+  end
+
+  it '/Dogs(3)' do
+    dogs = @provider.execute('/Dogs(3)')
+    dogs.length.should == 1
+    dogs.first.id.should == 3
+    dogs.first.name.should == 'Murdoch'
+  end
+
+  it '/Dogs?$top=2' do
+    dogs = @provider.execute('/Dogs?$top=2')
+    dogs.length.should == 2
+    dogs.first.id.should == 1
+    dogs.first.name.should == 'Rover'
+    dogs.last.id.should == 2
+    dogs.last.name.should == 'Lander'
+  end
+
+  it '/Dogs?$top=2$skip=4' do
+    dogs = @provider.execute('/Dogs?$top=2&$skip=4')
+    dogs.length.should == 1
+    dogs.first.id.should == 5
+    dogs.first.name.should == 'Rex'
+  end
+
+  it '/Dogs?$top=2$skip=3' do
+    dogs = @provider.execute('/Dogs?$top=2&$skip=3')
+    dogs.length.should == 2
+    dogs.first.id.should == 4
+    dogs.first.name.should == 'Spot'
+    dogs.last.id.should == 5
+    dogs.last.name.should == 'Rex'
+  end
 
 end
 
