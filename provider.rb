@@ -92,6 +92,7 @@ module OData
     class << self
       attr_accessor :option_types
       attr_accessor :executor_types
+      attr_accessor :default_executor_type
     end
 
     @option_types   ||= []
@@ -139,6 +140,74 @@ module OData
   end
 
   class Provider
+
+    module Rack
+      class Middleware
+        attr_accessor :app, :provider, :service_root
+
+        def initialize app, options
+          self.app          = app
+          self.provider     = options[:provider]
+          self.service_root = options[:service_root]
+
+          service_root.sub /\/$/, '' if service_root.end_with? '/'
+        end
+
+        def provider_app
+          #@provider_app ||= provider.rack_application
+          @provider_app ||= OData::Provider::Rack::Application.new(provider)
+        end
+
+        def remove_service_root! env
+          env['PATH_INFO'].sub!    service_root, ''
+          env['REQUEST_URI'].sub!  service_root, ''
+          env['REQUEST_PATH'].sub! service_root, ''
+        end
+
+        def call env
+          if env['PATH_INFO'].start_with? service_root
+            remove_service_root! env
+            provider_app.call    env
+          else
+            app.call env
+          end
+        end
+      end
+
+      class Application
+        attr_accessor :provider
+
+        def initialize provider
+          self.provider = provider
+        end
+
+        def call env
+          request  = ::Rack::Request.new env
+          response = ::Rack::Response.new
+          entities = provider.execute env['REQUEST_URI'] # has path and query strings
+
+          case request.GET['format']
+          when 'yaml'
+            require 'yaml'
+            response.headers['Content-Type'] = 'text/plain'
+            response.write entities.to_yaml
+          when 'xml'
+            require 'active_support/all'
+            response.headers['Content-Type'] = 'application/xml'
+            response.write entities.to_xml
+          when 'json'
+            require 'active_support/json'
+            response.headers['Content-Type'] = 'application/json'
+            response.write ActiveSupport::JSON.encode(entities)
+          else
+            response.write 'going to write custom xml ...'
+          end
+
+          response.finish
+        end
+      end
+    end
+
     attr_accessor :entity_types
 
     def initialize *entity_types
@@ -201,6 +270,18 @@ module OData
   class EntityType
     include InitializedByAttributes
 
+    def properties
+      self.class.properties.inject({}) do |hash, property|
+        hash[property.name] = send(property.name) if respond_to?(property.name)
+        hash
+      end
+    end
+
+    # Assumes activesupport xml serialization ...
+    def to_xml options = {}
+      properties.to_xml options
+    end
+
     def self.keys
       @keys ||= []
     end
@@ -210,7 +291,7 @@ module OData
     end
 
     def self.query_executor
-      @query_executor
+      @query_executor || Query.default_executor_type.new
     end
 
     def self.query_executor= query_executor
@@ -252,3 +333,6 @@ OData::Query.option_types = [OData::KeyQueryOption, OData::SkipQueryOption, ODat
 
 # Register names query executors
 OData::Query.executor_types = { :ruby => OData::RubyQueryExecutor }
+
+# Set a default executor, incase none is specified
+OData::Query.default_executor_type = OData::RubyQueryExecutor

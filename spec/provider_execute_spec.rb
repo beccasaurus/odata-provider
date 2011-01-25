@@ -13,17 +13,6 @@ class Dog < OData::EntityType
   #executor(:ruby){ Dog.all_dogs } # using shorthand for registered executors
   executor :ruby # using conventions
 
-  # assumes *1* key for now ...
-  def self.get key
-    $dogs.detect {|dog| dog.send(keys.first.name).to_s == key.to_s }
-  end
-
-  # our little repository of dogs, for testing
-  class << self
-    attr_accessor :all_dogs
-  end
-  @all_dogs ||= []
-
   # conventional method for the RubyQueryExecutor
   def self.all_entities
     [
