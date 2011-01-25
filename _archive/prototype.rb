@@ -113,7 +113,7 @@ get '/Animals.svc*' do |path|
   content_type 'text/plain'
 
   query = path
-  query += "?#{ request.query_string }" if request.query_string
+  query += "?#{ request.query_string }" unless request.query_string.empty?
 
   provider = OData::Provider.new Dog
   objects  = provider.execute query
