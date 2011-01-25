@@ -9,9 +9,9 @@ class Dog < OData::EntityType
   attr_property :id,   String
   attr_property :name, String
 
-  executor OData::RubyQueryExecutor.new { Dog.all_dogs }
-  #executor :ruby, lambda { Dog.all_dogs } # using shorthand for registered executors
-  #executor :ruby # using conventions
+  #executor OData::RubyQueryExecutor.new { Dog.all_dogs }
+  #executor(:ruby){ Dog.all_dogs } # using shorthand for registered executors
+  executor :ruby # using conventions
 
   # assumes *1* key for now ...
   def self.get key
@@ -23,6 +23,11 @@ class Dog < OData::EntityType
     attr_accessor :all_dogs
   end
   @all_dogs ||= []
+
+  # conventional method for the RubyQueryExecutor
+  def self.all_entities
+    all_dogs
+  end
 end
 
 describe OData::Provider, '#execute' do

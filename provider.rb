@@ -91,9 +91,11 @@ module OData
 
     class << self
       attr_accessor :option_types
+      attr_accessor :executor_types
     end
 
-    @option_types ||= []
+    @option_types   ||= []
+    @executor_types ||= {}
   end
 
   class QueryOption
@@ -251,11 +253,18 @@ module OData
       attr_accessor name
     end
 
-    def self.executor query_executor
-      self.query_executor = query_executor
+    def self.executor name_or_instance, *args, &block
+      if executor_type = Query.executor_types[name_or_instance]
+        self.query_executor = executor_type.new(*args, &block)
+      else
+        self.query_executor = name_or_instance
+      end
     end
   end
 end
 
 # Setup default OData query options
 OData::Query.option_types = [OData::KeyQueryOption, OData::SkipQueryOption, OData::TopQueryOption]
+
+# Register names query executors
+OData::Query.executor_types = { :ruby => OData::RubyQueryExecutor }
