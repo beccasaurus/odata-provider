@@ -26,7 +26,13 @@ class Dog < OData::EntityType
 
   # conventional method for the RubyQueryExecutor
   def self.all_entities
-    all_dogs
+    [
+      Dog.new(:id => 1, :name => 'Rover'),
+      Dog.new(:id => 2, :name => 'Lander'),
+      Dog.new(:id => 3, :name => 'Murdoch'),
+      Dog.new(:id => 4, :name => 'Spot'),
+      Dog.new(:id => 5, :name => 'Rex')
+    ]
   end
 end
 
@@ -34,13 +40,6 @@ describe OData::Provider, '#execute' do
 
   before do
     @provider = OData::Provider.new Dog
-    Dog.all_dogs = [
-      Dog.new(:id => 1, :name => 'Rover'),
-      Dog.new(:id => 2, :name => 'Lander'),
-      Dog.new(:id => 3, :name => 'Murdoch'),
-      Dog.new(:id => 4, :name => 'Spot'),
-      Dog.new(:id => 5, :name => 'Rex')
-    ]
   end
 
   it 'raises exception is #entity_types does not include the type'
@@ -130,13 +129,6 @@ describe OData::Provider, '#execute_query' do
 
   before do
     @provider = OData::Provider.new Dog
-    Dog.all_dogs = [
-      Dog.new(:id => 1, :name => 'Rover'),
-      Dog.new(:id => 2, :name => 'Lander'),
-      Dog.new(:id => 3, :name => 'Murdoch'),
-      Dog.new(:id => 4, :name => 'Spot'),
-      Dog.new(:id => 5, :name => 'Rex')
-    ]
   end
 
   it '/Dogs' do
@@ -175,4 +167,37 @@ describe OData::Provider, '#execute_query' do
     dogs.last.id.should == 5
     dogs.last.name.should == 'Rex'
   end
+end
+
+describe OData::Provider, '#render' do
+
+  before do
+    @provider = OData::Provider.new Dog
+  end
+
+  it '/Dogs' do
+    pending
+    xml = @provider.render('/Dogs')
+  end
+
+  it '/Dogs(3)' do
+    pending
+    xml = @provider.render('/Dogs(3)')
+  end
+
+  it '/Dogs?$top=2' do
+    pending
+    xml = @provider.render('/Dogs?$top=2')
+  end
+
+  it '/Dogs?$top=2$skip=4' do
+    pending
+    xml = @provider.render('/Dogs?$top=2&$skip=4')
+  end
+
+  it '/Dogs?$top=2$skip=3' do
+    pending
+    xml = @provider.render('/Dogs?$top=2&$skip=3')
+  end
+
 end
