@@ -200,7 +200,8 @@ module OData
             response.headers['Content-Type'] = 'application/json'
             response.write ActiveSupport::JSON.encode(entities)
           else
-            response.write 'going to write custom xml ...'
+            response.headers['Content-Type'] = 'application/xml'
+            response.write provider.xml_for entities
           end
 
           response.finish
@@ -240,6 +241,10 @@ module OData
 
     def execute query
       execute_query build_query(query)
+    end
+
+    def xml_for entities
+      '<!-- custom XML goes here -->'
     end
 
   private
