@@ -15,7 +15,7 @@ end
 
 module ArrayToHash
   def to_hash
-    dself.inject({}){|hash, array| hash[array.first] = array.last; hash }
+    self.inject({}){|hash, array| hash[array.first] = array.last; hash }
   end
 end
 
@@ -219,6 +219,12 @@ module OData
           request  = ::Rack::Request.new env
           response = ::Rack::Response.new
 
+          if env['REQUEST_URI'] == '' or env['REQUEST_URI'] == '/'
+            response.headers['Content-Type'] = 'application/xml'
+            response.write provider.root_xml
+            return response.finish
+          end
+
           if env['REQUEST_URI'] == '/$metadata'
             response.headers['Content-Type'] = 'application/xml'
             response.write provider.metadata_xml
@@ -284,6 +290,28 @@ module OData
 
     def execute query
       execute_query build_query(query)
+    end
+
+    def root_xml
+      xml = Nokogiri::XML::Builder.new { |xml|
+
+        xml.service 'xml:base'   => 'http://www.pluralsight-training.net/odata/', 
+                    'xmlns:atom' => 'http://www.w3.org/2005/Atom', 
+                    'xmlns:app'  => 'http://www.w3.org/2007/app',
+                    'xmlns'      => 'http://www.w3.org/2007/app' do |service|
+
+          service.workspace do |workspace|
+            workspace.send 'atom:title', 'Default'
+
+            entity_types.each do |entity_type|
+              workspace.collection :href => entity_type.collection_name do |collection|
+                collection.send 'atom:title', entity_type.collection_name
+              end
+            end
+          end
+        end
+
+      }.to_xml.sub('<?xml version="1.0"?>', '<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>')
     end
 
     def metadata_xml
@@ -406,6 +434,10 @@ module OData
     # Assumes activesupport xml serialization ...
     def to_xml options = {}
       properties.to_xml options
+    end
+
+    def self.collection_name
+      self.name.pluralize
     end
 
     def self.keys
