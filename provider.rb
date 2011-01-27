@@ -1,4 +1,3 @@
-require 'uri'
 require 'rubygems'
 require 'active_support/inflector'
 require 'rack'
@@ -16,7 +15,7 @@ end
 
 module ArrayToHash
   def to_hash
-    self.inject({}){|hash, array| hash[array.first] = array.last; hash }
+    dself.inject({}){|hash, array| hash[array.first] = array.last; hash }
   end
 end
 
@@ -190,8 +189,7 @@ module OData
         end
 
         def provider_app
-          #@provider_app ||= provider.rack_application
-          @provider_app ||= OData::Provider::Rack::Application.new(provider)
+          @provider_app ||= provider.rack_application
         end
 
         def remove_service_root! env
@@ -220,6 +218,13 @@ module OData
         def call env
           request  = ::Rack::Request.new env
           response = ::Rack::Response.new
+
+          if env['REQUEST_URI'] == '/$metadata'
+            response.headers['Content-Type'] = 'application/xml'
+            response.write provider.metadata_xml
+            return response.finish
+          end
+
           query    = provider.build_query env['REQUEST_URI'] # has path and query strings
           entities = provider.execute_query query
 
@@ -251,6 +256,10 @@ module OData
       end
     end
 
+    def rack_application
+      OData::Provider::Rack::Application.new self
+    end
+
     attr_accessor :entity_types
 
     def initialize *entity_types
@@ -277,9 +286,38 @@ module OData
       execute_query build_query(query)
     end
 
-    # we need to be able to get the <entry> xml for a single <entity> easily ... by passing in a builder?
-    #def xml_for entity
-    #end
+    def metadata_xml
+      xml = Nokogiri::XML::Builder.new { |xml|
+
+        xml.send 'edmx:Edmx', 'Version' => '1.0', 'xmlns:edmx' => 'http://schemas.microsoft.com/ado/2007/06/edmx' do |edmx|
+          edmx.send 'edmx:DataServices', 'xmlns:m' => 'http://schemas.microsoft.com/ado/2007/08/dataservices/metadata', 
+                                         'm:DataServiceVersion' => '2.0' do |dataServices|
+            dataServices.Schema 'Namespace' => 'MyNamespace', 
+                                    'xmlns:d' => 'http://schemas.microsoft.com/ado/2007/08/dataservices',
+                                    'xmlns:m' => 'http://schemas.microsoft.com/ado/2007/08/dataservices/metadata',
+                                    'xmlns'   => 'http://schemas.microsoft.com/ado/2007/05/edm' do |schema|
+
+              entity_types.each do |entity_type|
+                schema.EntityType 'Name' => entity_type.name do |type|
+
+                  type.Key do |key_element|
+                    entity_type.keys.each do |key|
+                      key_element.PropertyRef 'Name' => key.name
+                    end
+                  end
+
+                  entity_type.properties.each do |property|
+                    type.Property 'Name' => property.name
+                  end
+
+                end
+              end
+            end
+          end
+        end
+
+      }.to_xml.sub('<?xml version="1.0"?>', '<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>')
+    end
 
     # @private
     def _build_entity_xml query, entity, entry
@@ -332,12 +370,6 @@ module OData
         end
 
       }.to_xml.sub('<?xml version="1.0"?>', '<?xml version="1.0" encoding="utf-8" standalone="yes"?>')
-
-=begin
-      xml = Nokogiri::XML::Builder.new { |xml|
-        end
-      }.to_xml.sub('<?xml version="1.0"?>', '<?xml version="1.0" encoding="utf-8" standalone="yes"?>')
-=end
     end
 
   private

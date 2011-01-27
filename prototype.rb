@@ -25,7 +25,6 @@ class Dog < OData::EntityType
 end
 
 use OData::Provider::Rack::Middleware, :provider => OData::Provider.new(Dog), :service_root => '/Animals.svc'
-#use OData::Provider.new(Dog).rack_middleware
 
 get '/' do
   root = '/Animals.svc/'
