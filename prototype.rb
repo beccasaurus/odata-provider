@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/provider'
+require File.dirname(__FILE__) + '/lib/odata/provider'
 require 'rubygems'
 require 'sinatra'
 
@@ -6,7 +6,7 @@ require 'sinatra'
 require 'sinatra'
 
 class Dog < OData::EntityType
-  include InitializedByAttributes
+  include OData::InitializedByAttributes
 
   key :id
 

@@ -1,17 +1,15 @@
 #require 'spec_helper'
-require File.dirname(__FILE__) + '/../provider'
+require File.dirname(__FILE__) + '/../lib/odata/provider'
 
 class Dog < OData::EntityType
-  include InitializedByAttributes
+  include OData::InitializedByAttributes
 
   key :id
 
   attr_property :id,   String
   attr_property :name, String
 
-  #executor OData::RubyQueryExecutor.new { Dog.all_dogs }
-  #executor(:ruby){ Dog.all_dogs } # using shorthand for registered executors
-  executor :ruby # using conventions
+  executor :ruby
 
   # conventional method for the RubyQueryExecutor
   def self.all_entities
