@@ -59,6 +59,11 @@ module OData
       query.options.each do |option|
         all = filter_with_option all, option, query
       end
+
+      # nil should be returned if no results
+      return nil if all.empty?
+
+      # otherwise, return either an array or an entity
       query.returns_collection? ? all : all.first
     end
 
@@ -108,6 +113,18 @@ module OData
       Rack::Utils.parse_query(uri.query).select {|key, value| key.start_with?('$') }.to_hash
     end
 
+    def collection_name
+      uri.path.split('/').last.sub(/\([^\)]*\)$/, '')
+    end
+
+    def entity_type
+      provider.get_entity_type collection_name.singularize
+    end
+
+    def entity_name
+      entity_type.name
+    end
+
     def returns_collection?
       last_part_of_path = uri.path.split('/').last
       last_part_of_path == last_part_of_path.pluralize
@@ -115,11 +132,6 @@ module OData
 
     def returns_entity?
       not returns_collection?
-    end
-
-    def entity_type
-      last_part_of_path_without_id = uri.path.split('/').last.sub(/\([^\)]*\)$/, '')
-      provider.get_entity_type last_part_of_path_without_id.singularize
     end
   end
 
@@ -211,6 +223,11 @@ module OData
           query    = provider.build_query env['REQUEST_URI'] # has path and query strings
           entities = provider.execute_query query
 
+          if entities.nil?
+            response.status = 404
+            return response.finish
+          end
+
           case request.GET['format']
           when 'yaml'
             require 'yaml'
@@ -260,41 +277,67 @@ module OData
       execute_query build_query(query)
     end
 
-    def xml_for query, entities
-      entity      = entities.first
-      entity_type = query.entity_type
+    # we need to be able to get the <entry> xml for a single <entity> easily ... by passing in a builder?
+    #def xml_for entity
+    #end
 
+    # @private
+    def _build_entity_xml query, entity, entry
+      entry.id_ "[root] #{query.uri.path}"
+      entry.title '', :type => 'text'
+      entry.updated 'xml date'
+      entry.author {|a| a.name }
+
+      # <link rel="edit" title="Breed" href="Breeds(1)" />
+      # <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Dogs" type="application/atom+xml;type=feed" title="Dogs" href="Breeds(1)/Dogs" />
+
+      entry.category :term => query.entity_type.name, :scheme => 'http://schemas.microsoft.com/ado/2007/08/dataservices/scheme'
+
+      entry.content(:type => 'application/xml'){ |content|
+        content.send('m:properties'){ |properties|
+          query.entity_type.properties.each do |property|
+            properties.send("d:#{property.name}", entity.send(property.name).to_s)
+          end
+        }
+      }
+    end
+
+    def xml_for query, result
       xml = Nokogiri::XML::Builder.new { |xml|
-        xml.entry 'xml:base' => 'http://localhost:59671/Animals.svc/', 
-                  'xmlns:d'  => 'http://schemas.microsoft.com/ado/2007/08/dataservices',
-                  'xmlns:m'  => 'http://schemas.microsoft.com/ado/2007/08/dataservices/metadata',
-                  'xmlns'    => 'http://www.w3.org/2005/Atom' do |entry|
 
-          entry.id_ "[root] #{query.uri.path}"
-          entry.title :type => 'text'
-          entry.updated 'xml date'
-          entry.author {|a| a.name }
+        if query.returns_collection?
+          xml.feed 'xml:base' => 'http://localhost:59671/Animals.svc/',
+                   'xmlns:d'  => 'http://schemas.microsoft.com/ado/2007/08/dataservices',
+                   'xmlns:m'  => 'http://schemas.microsoft.com/ado/2007/08/dataservices/metadata',
+                   'xmlns'    => 'http://www.w3.org/2005/Atom' do |feed|
 
-          # <link rel="edit" title="Breed" href="Breeds(1)" />
-          # <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Dogs" type="application/atom+xml;type=feed" title="Dogs" href="Breeds(1)/Dogs" />
+            feed.title query.collection_name, :type => 'text'
+            feed.id_ "[ROOT]/#{query.collection_name}"
+            feed.updated 'updated date'
+            feed.link :rel => 'self', :title => query.collection_name, :href => query.collection_name
 
-          entry.category :term => entity_type.name, :scheme => 'http://schemas.microsoft.com/ado/2007/08/dataservices/scheme'
-          # <content type="application/xml">
-
-          entry.content(:type => 'application/xml'){ |content|
-            content.send('m:properties'){ |properties|
-              entity_type.properties.each do |property|
-                properties.send("d:#{property.name}", entity.send(property.name).to_s)
+            result.each do |entity|
+              feed.entry do |entry|
+                _build_entity_xml query, entity, entry
               end
-            }
-          }
+            end
+          end
+        else
+          xml.entry 'xml:base' => 'http://localhost:59671/Animals.svc/', 
+                    'xmlns:d'  => 'http://schemas.microsoft.com/ado/2007/08/dataservices',
+                    'xmlns:m'  => 'http://schemas.microsoft.com/ado/2007/08/dataservices/metadata',
+                    'xmlns'    => 'http://www.w3.org/2005/Atom' do |entry|
+            _build_entity_xml query, result, entry
+          end
+        end
 
-          # <m:properties>
-          #   <d:Id m:type="Edm.Int32">1</d:Id>
-          #   <d:Name>Goldern Retriever</d:Name>
+      }.to_xml.sub('<?xml version="1.0"?>', '<?xml version="1.0" encoding="utf-8" standalone="yes"?>')
 
+=begin
+      xml = Nokogiri::XML::Builder.new { |xml|
         end
       }.to_xml.sub('<?xml version="1.0"?>', '<?xml version="1.0" encoding="utf-8" standalone="yes"?>')
+=end
     end
 
   private

@@ -83,6 +83,8 @@ describe OData::Provider, '#make_query' do
     query.options.should be_empty
     query.returns_collection?.should be_true
     query.returns_entity?.should     be_false
+    query.collection_name.should == 'Dogs'
+    query.entity_name.should     == 'Dog'
   end
 
   it '/Dogs(1)' do
@@ -94,6 +96,8 @@ describe OData::Provider, '#make_query' do
     query.options.first.value.should == '1'
     query.returns_collection?.should be_false
     query.returns_entity?.should     be_true
+    query.collection_name.should == 'Dogs'
+    query.entity_name.should     == 'Dog'
   end
 
   it '/Dogs?$top=2' do
@@ -105,6 +109,8 @@ describe OData::Provider, '#make_query' do
     query.options.first.value.should == '2'
     query.returns_collection?.should be_true
     query.returns_entity?.should     be_false
+    query.collection_name.should == 'Dogs'
+    query.entity_name.should     == 'Dog'
   end
 
   it '/Dogs?$top=2$skip=5' do
@@ -117,6 +123,8 @@ describe OData::Provider, '#make_query' do
     skip_option.value.should == '5'
     query.returns_collection?.should be_true
     query.returns_entity?.should     be_false
+    query.collection_name.should == 'Dogs'
+    query.entity_name.should     == 'Dog'
   end
 
 end
