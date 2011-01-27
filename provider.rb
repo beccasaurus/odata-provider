@@ -59,7 +59,7 @@ module OData
       query.options.each do |option|
         all = filter_with_option all, option, query
       end
-      all
+      query.returns_collection? ? all : all.first
     end
 
     def filter_with_option all, option, query
@@ -77,18 +77,9 @@ module OData
     end
   end
 
+  # Has a Provider and a Uri that it uses to determine entity_type, options, return type, etc
   class Query
     include InitializedByAttributes
-
-    attr_accessor :provider, :uri, :entity_type, :options
-
-    def options
-      @options ||= []
-    end
-
-    def query_strings
-      Rack::Utils.parse_query(uri.query).select {|key, value| key.start_with?('$') }.to_hash
-    end
 
     class << self
       attr_accessor :option_types
@@ -98,6 +89,38 @@ module OData
 
     @option_types   ||= []
     @executor_types ||= {}
+
+    attr_accessor :provider, :uri, :options
+
+    def initialize options = nil
+      super
+
+      OData::Query.option_types.each do |option_type|
+        option_type.add_option_to_query self
+      end
+    end
+
+    def options
+      @options ||= []
+    end
+
+    def query_strings
+      Rack::Utils.parse_query(uri.query).select {|key, value| key.start_with?('$') }.to_hash
+    end
+
+    def returns_collection?
+      last_part_of_path = uri.path.split('/').last
+      last_part_of_path == last_part_of_path.pluralize
+    end
+
+    def returns_entity?
+      not returns_collection?
+    end
+
+    def entity_type
+      last_part_of_path_without_id = uri.path.split('/').last.sub(/\([^\)]*\)$/, '')
+      provider.get_entity_type last_part_of_path_without_id.singularize
+    end
   end
 
   class QueryOption
@@ -226,15 +249,7 @@ module OData
     end
 
     def build_query resource_path
-      uri         = uri_for resource_path
-      entity_type = entity_type_for uri.path
-      query       = OData::Query.new :provider => self, :uri => uri, :entity_type => entity_type
-
-      OData::Query.option_types.each do |option_type|
-        option_type.add_option_to_query query
-      end
-
-      query
+      OData::Query.new :provider => self, :uri => uri_for(resource_path)
     end
 
     def execute_query query
@@ -288,10 +303,6 @@ module OData
       resource_path = resource_path.strip
       resource_path = resource_path.sub('/', '') if resource_path.start_with?('/')
       URI.parse resource_path
-    end
-
-    def entity_type_for path
-      get_entity_type path.split('/').first.sub(/\([^\)]*\)$/, '').singularize
     end
   end
 

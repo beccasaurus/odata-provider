@@ -39,10 +39,9 @@ describe OData::Provider, '#execute' do
   end
 
   it '/Dogs(3)' do
-    dogs = @provider.execute('/Dogs(3)')
-    dogs.length.should == 1
-    dogs.first.id.should == 3
-    dogs.first.name.should == 'Murdoch'
+    dog = @provider.execute('/Dogs(3)')
+    dog.id.should == 3
+    dog.name.should == 'Murdoch'
   end
 
   it '/Dogs?$top=2' do
@@ -82,6 +81,8 @@ describe OData::Provider, '#make_query' do
     query = @provider.build_query '/Dogs'
     query.entity_type.should == Dog
     query.options.should be_empty
+    query.returns_collection?.should be_true
+    query.returns_entity?.should     be_false
   end
 
   it '/Dogs(1)' do
@@ -91,6 +92,8 @@ describe OData::Provider, '#make_query' do
     query.options.first.should be_a(OData::QueryOption)
     query.options.first.should be_a(OData::KeyQueryOption)
     query.options.first.value.should == '1'
+    query.returns_collection?.should be_false
+    query.returns_entity?.should     be_true
   end
 
   it '/Dogs?$top=2' do
@@ -100,6 +103,8 @@ describe OData::Provider, '#make_query' do
     query.options.first.should be_a(OData::QueryOption)
     query.options.first.should be_a(OData::TopQueryOption)
     query.options.first.value.should == '2'
+    query.returns_collection?.should be_true
+    query.returns_entity?.should     be_false
   end
 
   it '/Dogs?$top=2$skip=5' do
@@ -110,6 +115,8 @@ describe OData::Provider, '#make_query' do
     top_option.value.should == '2'
     skip_option = query.options.detect {|o| o.is_a? OData::SkipQueryOption }
     skip_option.value.should == '5'
+    query.returns_collection?.should be_true
+    query.returns_entity?.should     be_false
   end
 
 end
@@ -122,18 +129,20 @@ describe OData::Provider, '#execute_query' do
 
   it '/Dogs' do
     dogs = @provider.execute_query @provider.build_query('/Dogs')
+    dogs.should be_a(Array)
     dogs.length.should == 5
   end
 
   it '/Dogs(3)' do
-    dogs = @provider.execute_query @provider.build_query('/Dogs(3)')
-    dogs.length.should == 1
-    dogs.first.id.should == 3
-    dogs.first.name.should == 'Murdoch'
+    dog = @provider.execute_query @provider.build_query('/Dogs(3)')
+    dog.should be_a(Dog)
+    dog.id.should == 3
+    dog.name.should == 'Murdoch'
   end
 
   it '/Dogs?$top=2' do
     dogs = @provider.execute_query @provider.build_query('/Dogs?$top=2')
+    dogs.should be_a(Array)
     dogs.length.should == 2
     dogs.first.id.should == 1
     dogs.first.name.should == 'Rover'
@@ -143,6 +152,7 @@ describe OData::Provider, '#execute_query' do
 
   it '/Dogs?$top=2$skip=4' do
     dogs = @provider.execute_query @provider.build_query('/Dogs?$top=2&$skip=4')
+    dogs.should be_a(Array)
     dogs.length.should == 1
     dogs.first.id.should == 5
     dogs.first.name.should == 'Rex'
@@ -150,6 +160,7 @@ describe OData::Provider, '#execute_query' do
 
   it '/Dogs?$top=2$skip=3' do
     dogs = @provider.execute_query @provider.build_query('/Dogs?$top=2&$skip=3')
+    dogs.should be_a(Array)
     dogs.length.should == 2
     dogs.first.id.should == 4
     dogs.first.name.should == 'Spot'

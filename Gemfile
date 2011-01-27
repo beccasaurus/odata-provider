@@ -1,6 +1,7 @@
 source :rubygems
 
 group :development, :test do
+  gem 'nokogiri'
   gem 'rspec'
   gem 'fakeweb'
   gem 'rack-test', :require => 'rack/test'
